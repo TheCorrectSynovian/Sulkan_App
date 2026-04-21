@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sulkan | Vulkan-First Shader Runtime</title>
+  <meta name="description" content="Sulkan is a static showcase and documentation site for a Vulkan-first Minecraft rendering runtime with live shader-pack switching, cascaded terrain shadows, entity shadowing, and advanced water rendering.">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body data-page="home">
+  <div class="shell">
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="brand" href="index.html">
+<span class="brand-mark"><img src="logo.webp" alt="Sulkan icon"></span>
+          <span>Sulkan : Vulkan for Minecraft</span>
+        </a>
+        <nav class="nav">
+          <a data-nav="home" href="index.html">Overview</a>
+          <a data-nav="features" href="features.html">Features</a>
+          <a data-nav="docs" href="documentation.html">Documentation</a>
+          <a data-nav="api" href="shaderpack-api.html">Shader Pack API</a>
+          <a data-nav="versions" href="versions.html">Versions</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page">
+      <section class="hero">
+        <article class="hero-card reveal">
+          <span class="eyebrow">Vulkan-first client rendering</span>
+          <br>        
+          <br>
+          <h2>Introducing Sulkan<br>A Revolutionary Vulkan Shader Loader for Minecraft 26.2</h2>
+          <p class="lead">
+            Documentation for Sulkan: Vulkan-enforced shaders, live pack switching, advanced water, cascaded shadows for Minecraft 26.2.
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="shaderpack-api.html">Open Shader Pack API</a>
+            <a class="btn btn-secondary" href="documentation.html">Read Technical Docs</a>
+          </div>
+        </article>
+
+        <aside class="hero-rail hero-card scanline float-card reveal">
+          <div class="stat-grid">
+            <div class="stat">
+              <strong>One of the First Fully Working Vulkan Shaders <br> <h4> ( built for Minecarft 26.2 )<h4></h4></strong>
+              <span>Sulkan Loader is directly built from scratch for the 26.2 Minecarft Vulkan Update.</span>
+            </div>
+            <div class="stat">
+              <strong>Live pack switching</strong>
+              <span>External packs can be selected, reloaded, staged, and activated from the in-game Sulkan menu.</span>
+            </div>
+            <div class="stat">
+              <strong>Advanced water</strong>
+              <span>Wave-driven displacement, refraction, tinting, and screen-space reflections are part of the default stack.</span>
+            </div>
+            <div class="stat">
+              <strong>Vulkan only</strong>
+              <span>Sulkan actively forces a Vulkan preference and validates the live backend on startup.</span>
+            </div>
+          </div>
+        </aside>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-head">
+          <div>
+            <span class="kicker">Why it matters</span>
+            <h2>A mod-facing surface with engine discipline</h2>
+          </div>
+          <p>
+            Sulkan is not positioned here as a random shader bundle. The source shows a deliberate runtime contract: controlled pack intake, clear quality presets, stable bind names, predictable cascade behavior, and a documentation surface that can support both creators and presentation.
+          </p>
+        </div>
+        <div class="card-grid">
+          <article class="feature-card">
+            <span class="label">Promotion</span>
+            <strong>Built for visual identity</strong>
+            <p>Sun shadows, animated water, and a stronger celestial direction make Sulkan read like a rendering platform with an authored aesthetic, not just a compatibility layer.</p>
+          </article>
+          <article class="feature-card">
+            <span class="label">Creator workflow</span>
+            <strong>Folder packs and zip packs both work</strong>
+            <p>The manager scans the standard `shaders` directory, accepts directory or `.zip` packs, and maps shorthand `shaders/...` layouts into `assets/sulkan/shaders/...` automatically.</p>
+          </article>
+          <article class="feature-card">
+            <span class="label">Operational model</span>
+            <strong>Generated active-pack staging</strong>
+            <p>Selected packs are rebuilt into a dedicated active resource pack so Sulkan can keep pack activation explicit and reload behavior controlled.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section panel reveal">
+        <div class="section-head">
+          <div>
+            <span class="kicker">What this site covers</span>
+            <h2>Product framing, technical documentation, and API surfaces</h2>
+          </div>
+          <p>The pages below are grounded in the current workspace sources, but intentionally describe the system at product and interface level instead of exposing implementation internals line-for-line.</p>
+        </div>
+        <div class="mini-grid">
+          <article class="mini-card">
+            <strong>Features</strong>
+            <p>High-level product positioning for presentation, promotional copy, capabilities, and creator-facing highlights.</p>
+          </article>
+          <article class="mini-card">
+            <strong>Documentation</strong>
+            <p>Runtime behavior, shader workflow, quality presets, backend requirements, and packaging expectations.</p>
+          </article>
+          <article class="mini-card">
+            <strong>Shader Pack API</strong>
+            <p>Supported file layout, samplers, uniform blocks, pass contracts, quality semantics, and compatibility boundaries.</p>
+          </article>
+          <article class="mini-card">
+            <strong>Versions</strong>
+            <p>Observed version lineage from metadata and build artifacts in the workspace, presented as a release-facing timeline.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-card">
+        <strong>Sulkan documentation microsite</strong>
+        <p>This static site was generated from the current Sulkan workspace to support presentation, promotion, and shader-pack author documentation.</p>
+        <div class="footer-links">
+          <a href="features.html">Feature narrative</a>
+          <a href="documentation.html">Technical docs</a>
+          <a href="shaderpack-api.html">Shader Pack API</a>
+          <a href="versions.html">Version matrix</a>
+        </div>
+        <div class="copyright">© 2026 MrAvatin CC Licence</div>
+      </div>
+    </footer>
+  </div>
+  <script src="js/site.js"></script>
+</body>
+</html>

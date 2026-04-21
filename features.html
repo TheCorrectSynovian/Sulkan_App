@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sulkan | Features</title>
+  <meta name="description" content="Promotional and feature-focused overview of the Sulkan rendering stack.">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body data-page="features">
+  <div class="shell">
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="brand" href="index.html">
+<span class="brand-mark"><img src="logo.webp" alt="Sulkan icon"></span>
+          <span>Sulkan : Vulkan for Minecraft</span>
+        </a>
+        <nav class="nav">
+          <a data-nav="home" href="index.html">Overview</a>
+          <a data-nav="features" href="features.html">Features</a>
+          <a data-nav="docs" href="documentation.html">Documentation</a>
+          <a data-nav="api" href="shaderpack-api.html">Shader Pack API</a>
+          <a data-nav="versions" href="versions.html">Versions</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page">
+      <section class="panel reveal">
+        <span class="eyebrow">Promotion deck</span>
+        <h1>The rendering layer that makes a Minecraft client feel authored.</h1>
+        <p class="lead">
+          Sulkan presents itself best as a premium client-side rendering runtime. The source-backed feature set supports that claim: strong directional shadows, better water, managed shader-pack intake, live preview workflow, and a menu surface built specifically for iterative visual work.
+        </p>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-head">
+          <div>
+            <span class="kicker">Core promise</span>
+            <h2>Visual control without chaotic pack management</h2>
+          </div>
+          <p>The current implementation shows a consistent theme: Sulkan is opinionated where stability matters, and flexible where creators need room to iterate.</p>
+        </div>
+        <div class="card-grid">
+          <article class="feature-card">
+            <span class="label">Realtime workflow</span>
+            <strong>Swap packs live while staying in-world</strong>
+            <p>The shader UI is designed around in-world preview, immediate selection changes, and explicit reload commands instead of opaque restart loops.</p>
+          </article>
+          <article class="feature-card">
+            <span class="label">Rendering identity</span>
+            <strong>Cascaded terrain shadows with entity integration</strong>
+            <p>Terrain and entity shading are part of one coherent shadow story, giving Sulkan a more cinematic read than a basic post-process stack.</p>
+          </article>
+          <article class="feature-card">
+            <span class="label">Premium water</span>
+            <strong>Displacement, tint, reflection, and refraction</strong>
+            <p>Water is not a flat transparency pass. Sulkan adds motion, thickness-aware tinting, and reflective behavior to make water a headline feature.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section panel reveal">
+        <div class="section-head">
+          <div>
+            <span class="kicker">PR positioning</span>
+            <h2>How to talk about Sulkan</h2>
+          </div>
+          <p>The messaging below stays ambitious, but still tracks the observed codebase rather than overselling fictional systems.</p>
+        </div>
+        <div class="doc-grid">
+          <article class="doc-card">
+            <strong>Short pitch</strong>
+            <p>Sulkan is a Vulkan-first shader runtime for Minecraft that combines live pack switching, managed resource activation, advanced water, and multi-stage shadow rendering into a creator-oriented client experience.</p>
+          </article>
+          <article class="doc-card">
+            <strong>Launch framing</strong>
+            <p>Built for visual modpacks, cinematic setups, technical creators, and players who want a stronger identity than vanilla-compatible shader toggles can usually deliver.</p>
+          </article>
+          <article class="doc-card">
+            <strong>Audience angle</strong>
+            <p>Use Sulkan when visual style is part of the project itself: curated packs, brandable clients, showcase worlds, and shader ecosystems with a defined contract.</p>
+          </article>
+          <article class="doc-card">
+            <strong>Credibility angle</strong>
+            <p>Its strongest differentiator is discipline. Sulkan validates backend assumptions, constrains pack layout, and surfaces quality modes explicitly.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-head">
+          <div>
+            <span class="kicker">Feature stack</span>
+            <h2>High-signal capabilities</h2>
+          </div>
+          <p>These are the features that matter both technically and for promotion.</p>
+        </div>
+        <div class="spec-grid">
+          <article class="spec-card">
+            <strong>Vulkan enforcement</strong>
+            <p>Sulkan forces the preferred graphics API toward Vulkan and rejects non-Vulkan runtime startup.</p>
+          </article>
+          <article class="spec-card">
+            <strong>Shader folder scanning</strong>
+            <p>Supported packs are detected from the game `shaders` directory with unsupported entries clearly ignored.</p>
+          </article>
+          <article class="spec-card">
+            <strong>Quality presets</strong>
+            <p>Low, Normal, High, and Ultra change shadow-map scale, coverage scale, and maximum active cascades.</p>
+          </article>
+          <article class="spec-card">
+            <strong>Live reload</strong>
+            <p>Pack changes trigger resource-pack refreshes and renderer-side invalidation without a full workflow reset.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-card">
+        <strong>Promotion meets source-backed detail</strong>
+        <p>Sulkan benefits from being pitched as a rendering platform with a clearly defined authoring surface. The technical pages in this site make that claim defensible.</p>
+        <div class="copyright">© 2026 MrAvatin CC Licence</div>
+      </div>
+    </footer>
+  </div>
+  <script src="js/site.js"></script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sulkan | Technical Documentation</title>
+  <meta name="description" content="Technical documentation for Sulkan runtime behavior, workflow, presets, and packaging.">
+  <link rel="stylesheet" href="css/site.css">
+</head>
+<body data-page="docs">
+  <div class="shell">
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="brand" href="index.html">
+<span class="brand-mark"><img src="logo.webp" alt="Sulkan icon"></span>
+          <span>Sulkan : Vulkan for Minecraft</span>
+        </a>
+        <nav class="nav">
+          <a data-nav="home" href="index.html">Overview</a>
+          <a data-nav="features" href="features.html">Features</a>
+          <a data-nav="docs" href="documentation.html">Documentation</a>
+          <a data-nav="api" href="shaderpack-api.html">Shader Pack API</a>
+          <a data-nav="versions" href="versions.html">Versions</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page">
+      <section class="panel reveal">
+        <span class="eyebrow">Technical overview</span>
+        <h1>Sulkan runtime model</h1>
+        <p class="lead">
+          The current Sulkan source presents a focused runtime contract. Startup initializes shader-pack management, water and shadow pipelines, and renderer state. On client start, Sulkan verifies a Vulkan backend and bootstraps the selected pack state into the active resource-pack repository.
+        </p>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-head">
+          <div>
+            <span class="kicker">Requirements</span>
+            <h2>Environment and compatibility posture</h2>
+          </div>
+          <p>These items are directly visible from metadata and client startup behavior in the workspace.</p>
+        </div>
+        <div class="table-card">
+          <table>
+            <thead>
+              <tr>
+                <th>Area</th>
+                <th>Observed contract</th>
+                <th>Implication</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Graphics backend</td>
+                <td>`Vulkan` is required and actively enforced.</td>
+                <td>Clients must restart with Vulkan available; non-Vulkan execution is treated as invalid.</td>
+              </tr>
+              <tr>
+                <td>Runtime side</td>
+                <td>Client-only mod.</td>
+                <td>No server-side Sulkan logic is required for the documented features.</td>
+              </tr>
+              <tr>
+                <td>Java target</td>
+                <td>Java 25 toolchain in this workspace.</td>
+                <td>Documentation and packaging should assume a modern runtime baseline.</td>
+              </tr>
+              <tr>
+                <td>Fabric metadata</td>
+                <td>Fabric loader and Fabric API are part of the current build metadata.</td>
+                <td>Sulkan is currently documented as a Fabric-side rendering stack.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section panel reveal">
+        <div class="section-head">
+          <div>
+            <span class="kicker">Workflow</span>
+            <h2>Shader pack lifecycle</h2>
+          </div>
+          <p>The manager behavior is structured enough to document as a stable user workflow.</p>
+        </div>
+        <div class="doc-grid">
+          <article class="doc-card">
+            <strong>1. Discovery</strong>
+            <p>Sulkan scans the game `shaders` folder and classifies each entry as supported or unsupported. Supported entries may be directories or `.zip` files.</p>
+          </article>
+          <article class="doc-card">
+            <strong>2. Normalization</strong>
+            <p>Packs may ship as `assets/sulkan/shaders/...` directly, or as shorthand `shaders/...`, which Sulkan maps into the Sulkan namespace during staging.</p>
+          </article>
+          <article class="doc-card">
+            <strong>3. Active pack staging</strong>
+            <p>Selected external packs are rebuilt into a generated active resource pack named `sulkan_shaderpack_active` before being inserted into resource-pack selection.</p>
+          </article>
+          <article class="doc-card">
+            <strong>4. Reload and invalidation</strong>
+            <p>When the active pack changes, Sulkan triggers resource reloads and prompts shadow renderer refresh and level render-data reset where needed.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section reveal">
+        <div class="section-head">
+          <div>
+            <span class="kicker">Quality presets</span>
+            <h2>Observed preset semantics</h2>
+          </div>
+          <p>Preset values are explicit in the current source and are safe to document as first-order runtime controls.</p>
+        </div>
+        <div class="table-card">
+          <table>
+            <thead>
+              <tr>
+                <th>Preset</th>
+                <th>Shadow resolution scale</th>
+                <th>Coverage scale</th>
+                <th>Max terrain cascades</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Low</td>
+                <td>0.25x</td>
+                <td>0.68x</td>
+                <td>2</td>
+              </tr>
+              <tr>
+                <td>Normal</td>
+                <td>0.75x</td>
+                <td>0.85x</td>
+                <td>3</td>
+              </tr>
+              <tr>
+                <td>High</td>
+                <td>1.00x</td>
+                <td>1.00x</td>
+                <td>4</td>
+              </tr>
+              <tr>
+                <td>Ultra</td>
+                <td>1.50x</td>
+                <td>1.12x</td>
+                <td>4</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="section panel reveal">
+        <div class="section-head">
+          <div>
+            <span class="kicker">Water and shadows</span>
+            <h2>Technical feature summary</h2>
+          </div>
+          <p>These notes summarize what Sulkan exposes without mirroring the source files directly.</p>
+        </div>
+        <div class="api-grid">
+          <article class="api-card">
+            <strong>Terrain shadowing</strong>
+            <p>Up to four cascades are budgeted, refreshed at different tick intervals, and blended by receiver distance. Quality presets and render distance influence the active count and effective coverage.</p>
+          </article>
+          <article class="api-card">
+            <strong>Entity shadowing</strong>
+            <p>Entity receivers use a three-cascade terrain shadow stack plus a dedicated dynamic entity shadow depth source for short-range detail.</p>
+          </article>
+          <article class="api-card">
+            <strong>Wave timing</strong>
+            <p>Water animation is driven by a uniform buffer updated once per frame with runtime wave time, allowing deterministic animated displacement and ripple logic in water shaders.</p>
+          </article>
+          <article class="api-card">
+            <strong>Custom celestials</strong>
+            <p>Sulkan defines a custom orbital yaw for sun and moon direction, giving the shadow system an authored celestial orientation rather than vanilla-only assumptions.</p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-card">
+        <strong>Next stop: API surface</strong>
+        <p>The shader-pack page documents the file layout, bind names, uniform blocks, and supported pass expectations creators need to target.</p>
+        <div class="footer-links">
+          <a href="shaderpack-api.html">Open Shader Pack API</a>
+        </div>
+        <div class="copyright">© 2026 MrAvatin CC Licence</div>
+      </div>
+    </footer>
+  </div>
+  <script src="js/site.js"></script>
+</body>
+</html>
