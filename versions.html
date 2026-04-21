@@ -73,74 +73,107 @@
           </article>
         </div>
       </section>
+      <div style="
+    padding: 60px 20px;
+    text-align: center;
+    background: radial-gradient(circle at center, #0a0a0a, #000000);
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+    border-radius: 16px;
+    box-shadow: 0 0 40px rgba(255,0,0,0.2);
+    position: relative;
+    overflow: hidden;
+">
 
-      <section class="section panel reveal">
-        <div class="section-head">
-          <div>
-            <span class="kicker">Observed artifacts</span>
-            <h2>Build outputs found locally</h2>
-          </div>
-          <p>These names were visible in `build/libs` and indicate an active snapshot lineage beyond a single alpha marker.</p>
-        </div>
-        <div class="timeline">
-          <article class="timeline-card">
-            <div class="timeline-meta">
-              <span class="pill pill-hot">Workspace artifact</span>
-              <span class="pill">AeonisCM-Alpha-4.0_mc26.1.jar</span>
-            </div>
-            <p>Shows an older alpha-format naming style tied to a `4.0` generation and `mc26.1` target naming.</p>
-          </article>
-          <article class="timeline-card">
-            <div class="timeline-meta">
-              <span class="pill pill-hot">Workspace artifact</span>
-              <span class="pill">AeonisCM-Alpha-4.0-SNAPSHOT8/9/10_mc26.1.jar</span>
-            </div>
-            <p>Indicates iterative snapshot packaging over the same major line, useful for presenting Sulkan as an actively moving render subsystem.</p>
-          </article>
-          <article class="timeline-card">
-            <div class="timeline-meta">
-              <span class="pill pill-hot">Workspace artifact</span>
-              <span class="pill">AeonisCM-4.1_SNAPSHOT1-mc26.1.jar</span>
-            </div>
-            <p>Suggests a newer snapshot branch or package generation in the local build chain.</p>
-          </article>
-        </div>
-      </section>
+    <!-- Animated Glow Background -->
+    <div style="
+        position:absolute;
+        width:300%;
+        height:300%;
+        background: radial-gradient(circle, rgba(255,0,0,0.15), transparent);
+        animation: pulse 6s infinite;
+        top:-100%;
+        left:-100%;
+    "></div>
 
-      <section class="section reveal">
-        <div class="section-head">
-          <div>
-            <span class="kicker">Presentation guidance</span>
-            <h2>How to talk about versions publicly</h2>
-          </div>
-          <p>The current repository benefits from a cleaner public framing than a direct dump of every internal string.</p>
-        </div>
-        <div class="doc-grid">
-          <article class="doc-card">
-            <strong>Public label</strong>
-            <p>Use a single release-facing string for the site landing copy. Right now `Alpha` or `Preview Alpha` is the safest umbrella.</p>
-          </article>
-          <article class="doc-card">
-            <strong>Technical label</strong>
-            <p>Keep the detailed matrix here, where multiple version lines can be explained as metadata drift or active migration.</p>
-          </article>
-          <article class="doc-card">
-            <strong>Compatibility label</strong>
-            <p>Document the observed current target as Minecraft `26.2-snapshot-3`, Fabric Loader `0.19.x`, and Java `25`.</p>
-          </article>
-          <article class="doc-card">
-            <strong>Roadmap label</strong>
-            <p>Frame future stable releases as consolidation of metadata, shader-pack ABI, and public package naming.</p>
-          </article>
-        </div>
-      </section>
-    </main>
+    <h1 style="
+        font-size: 48px;
+        margin-bottom: 10px;
+        letter-spacing: 2px;
+        text-shadow: 0 0 15px rgba(255,0,0,0.6);
+    ">
+        SULKAN
+    </h1>
 
-    <footer class="footer">
-      <div class="footer-card">
-        <strong>Version note</strong>
-        <p>This version page is intentionally honest: it reflects what exists in the workspace now, and gives you a cleaner release narrative without pretending the repository is already fully normalized.</p>
-        <div class="copyright">© 2026 MrAvatin CC Licence</div>
+    <p style="
+        font-size: 18px;
+        opacity: 0.8;
+        margin-bottom: 30px;
+    ">
+        Vulkan-powered shaders. Next-gen Minecraft visuals.
+    </p>
+
+    <!-- BUTTONS -->
+    <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap;">
+
+        <!-- CurseForge -->
+        <a href="https://www.curseforge.com/minecraft/mc-mods/sulkan" target="_blank"
+           style="
+              padding: 14px 28px;
+              font-size: 16px;
+              font-weight: bold;
+              color: #fff;
+              text-decoration: none;
+              border-radius: 8px;
+              background: linear-gradient(135deg, #ff7a18, #ff3c00);
+              box-shadow: 0 0 15px rgba(255,100,0,0.5);
+              transition: 0.3s;
+           "
+           onmouseover="this.style.transform='scale(1.1)'; this.style.boxShadow='0 0 25px rgba(255,120,0,0.9)'"
+           onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 0 15px rgba(255,100,0,0.5)'"
+        >
+           🔥 CurseForge Download
+        </a>
+
+        <!-- Modrinth -->
+        <a href="https://www.modrinth.com/mods/sulkan" target="_blank"
+           style="
+              padding: 14px 28px;
+              font-size: 16px;
+              font-weight: bold;
+              color: #fff;
+              text-decoration: none;
+              border-radius: 8px;
+              background: linear-gradient(135deg, #00ff99, #00c853);
+              box-shadow: 0 0 15px rgba(0,255,150,0.5);
+              transition: 0.3s;
+           "
+           onmouseover="this.style.transform='scale(1.1)'; this.style.boxShadow='0 0 25px rgba(0,255,150,0.9)'"
+           onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 0 15px rgba(0,255,150,0.5)'"
+        >
+           ⚡ Modrinth Download
+        </a>
+
+    </div>
+
+    <!-- FEATURES MINI TAGS -->
+    <div style="margin-top: 40px; display:flex; justify-content:center; gap:15px; flex-wrap:wrap;">
+        <span style="padding:6px 12px; border:1px solid #444; border-radius:6px;">Vulkan Engine</span>
+        <span style="padding:6px 12px; border:1px solid #444; border-radius:6px;">Shader Support</span>
+        <span style="padding:6px 12px; border:1px solid #444; border-radius:6px;">Fabric Mod</span>
+    </div>
+
+</div>
+
+<!-- KEYFRAMES -->
+<style>
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 0.6; }
+    50% { transform: scale(1.2); opacity: 0.2; }
+    100% { transform: scale(1); opacity: 0.6; }
+}
+</style>
+<div class="copyright">© 2026 MrAvatin CC Licence</div>
       </div>
     </footer>
   </div>
