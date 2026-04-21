@@ -1,11 +1,10 @@
 <!doctype html>
-
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sulkan | Vulkan-First Shader Runtime</title>
-  <meta name="description" content="Sulkan is a static showcase and documentation site for a Vulkan-first Minecraft rendering runtime with live shader-pack switching, cascaded terrain shadows, entity shadowing, and advanced water rendering.">
+  <title>Sulkan | Cinematic Minecraft Visuals</title>
+  <meta name="description" content="Sulkan is a premium Vulkan-first visual upgrade for Minecraft, delivering cinematic lighting, advanced water, and creator-ready shader experiences.">
   <link rel="stylesheet" href="css/site.css">
 </head>
 <body data-page="home">
@@ -14,8 +13,11 @@
       <div class="topbar-inner">
         <a class="brand" href="index.html">
           <span class="brand-mark"><img src="logo.webp" alt="Sulkan icon"></span>
-          <span>Sulkan : Vulkan for Minecraft</span>
+          <span>Sulkan | Minecraft Visual Engine</span>
         </a>
+        <button class="hamburger" id="hamburger" aria-label="Open navigation" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
         <nav class="nav">
           <a data-nav="home" href="index.html">Overview</a>
           <a data-nav="features" href="features.html">Features</a>
@@ -26,63 +28,41 @@
       </div>
     </header>
 
-```
 <main class="page">
   <section class="hero">
-    <article class="hero-card reveal">
-      <span class="eyebrow">Vulkan-first client rendering</span>
-      <br><br>
-      <h2>Introducing Sulkan<br>A Revolutionary Vulkan Shader Loader for Minecraft 26.2</h2>
+    <article class="hero-card reveal float-card">
+      <span class="eyebrow">Official Visual Experience</span>
+      <h1>Make your Minecarft Gameplay Immersive!</h1>
       <p class="lead">
-        Documentation for Sulkan: Vulkan-enforced shaders, live pack switching, advanced water, cascaded shadows for Minecraft 26.2.
+        Sulkan transforms everyday gameplay into a cinematic world with bold lighting, rich water, and dramatic atmosphere. Built for players, creators, and communities that want a recognizable visual identity.
       </p>
 
       <div class="hero-actions">
-        <a class="btn btn-primary" href="shaderpack-api.html">Open Shader Pack API</a>
-        <a class="btn btn-secondary" href="documentation.html">Read Technical Docs</a>
-      </div>
-
-      <!-- 🔥 NEW DOWNLOAD BUTTONS (non-breaking addition) -->
-      <div style="margin-top:25px; display:flex; gap:15px; flex-wrap:wrap;">
-        <a href="https://www.curseforge.com/minecraft/mc-mods/sulkan" target="_blank"
-           style="padding:12px 20px; border-radius:8px; text-decoration:none; font-weight:600;
-           background:linear-gradient(135deg,#ff7a18,#ff3c00); color:#fff;
-           box-shadow:0 0 12px rgba(255,80,0,0.5);
-           transition:0.25s;"
-           onmouseover="this.style.transform='scale(1.08)'"
-           onmouseout="this.style.transform='scale(1)'">
-           🔥 CurseForge
-        </a>
-
-        <a href="https://www.modrinth.com/mods/sulkan" target="_blank"
-           style="padding:12px 20px; border-radius:8px; text-decoration:none; font-weight:600;
-           background:linear-gradient(135deg,#00ff99,#00c853); color:#fff;
-           box-shadow:0 0 12px rgba(0,255,150,0.5);
-           transition:0.25s;"
-           onmouseover="this.style.transform='scale(1.08)'"
-           onmouseout="this.style.transform='scale(1)'">
-           ⚡ Modrinth
-        </a>
+        <a class="btn btn-primary" href="versions.html">Download Sulkan</a>
+        <a class="btn btn-secondary" href="features.html">Explore Features</a>
       </div>
     </article>
-
-    <aside class="hero-rail hero-card scanline float-card reveal">
+    <img src="image.png"> 
+    <h2> One of the FIRST shader mod built from scratch for Minecarft Vulkan Update 26.2</h2>
+    <br> <img src="i2.png">
+    <br>
+    <aside class="hero-rail reveal">
       <div class="stat-grid">
         <div class="stat">
-          <strong>One of the First Fully Working Vulkan Shaders <br><h4>(built for Minecraft 26.2)</h4></strong>
-          <span>Sulkan Loader is directly built from scratch for the 26.2 Minecraft Vulkan Update.</span>
+          <strong>Premium first impression</strong>
+          <span>Turn your world into a polished showcase with stronger mood, depth, and color storytelling.</span>
         </div>
         <div class="stat">
-          <strong>Live pack switching</strong>
-          <span>External packs can be selected, reloaded, staged, and activated from the in-game Sulkan menu.</span>
+          <strong>Creator-ready workflows</strong>
+          <span>Switch and tune visual styles quickly, ideal for video creators and community servers.</span>
         </div>
         <div class="stat">
-          <strong>Advanced water</strong>
-          <span>Wave-driven displacement, refraction, tinting, and screen-space reflections are part of the default stack.</span>
+          <strong>Cinematic water and shadows</strong>
+          <span>Dynamic reflections and layered shadows make every biome feel elevated and distinct.</span>
         </div>
         <div class="stat">
-          <strong>Vulkan only</strong>
-          <span>Sulkan actively forces a Vulkan preference and validates the live backend on startup.</span>
+          <strong>Built for modern visuals</strong>
+          <span>Focused, forward-looking rendering for players targeting high-fidelity Minecraft moments.</span>
         </div>
       </div>
     </aside>
@@ -91,28 +71,58 @@
   <section class="section reveal">
     <div class="section-head">
       <div>
-        <span class="kicker">Why it matters</span>
-        <h2>A mod-facing surface with engine discipline</h2>
+        <span class="kicker">Why Sulkan</span>
+        <h2>A visual brand, not just a graphics toggle</h2>
       </div>
       <p>
-        Sulkan is not positioned here as a random shader bundle. The source shows a deliberate runtime contract: controlled pack intake, clear quality presets, stable bind names, predictable cascade behavior, and a documentation surface that can support both creators and presentation.
+        Sulkan is designed to give your gameplay, streams, and trailers a clear signature look. Whether you run solo builds or full communities, Sulkan helps every scene feel intentional.
       </p>
     </div>
     <div class="card-grid">
       <article class="feature-card">
-        <span class="label">Promotion</span>
-        <strong>Built for visual identity</strong>
-        <p>Sun shadows, animated water, and a stronger celestial direction make Sulkan read like a rendering platform with an authored aesthetic.</p>
+        <span class="label">For players</span>
+        <strong>Instantly richer worlds</strong>
+        <p>Experience dramatic sunsets, clearer depth, and smoother atmosphere from your first launch.</p>
       </article>
       <article class="feature-card">
-        <span class="label">Creator workflow</span>
-        <strong>Folder packs and zip packs both work</strong>
-        <p>The manager scans the standard `shaders` directory and supports `.zip` packs seamlessly.</p>
+        <span class="label">For creators</span>
+        <strong>Camera-friendly rendering</strong>
+        <p>Capture sharper highlights and cleaner scenes for social media clips and long-form content.</p>
       </article>
       <article class="feature-card">
-        <span class="label">Operational model</span>
-        <strong>Generated active-pack staging</strong>
-        <p>Selected packs are rebuilt into a dedicated active resource pack.</p>
+        <span class="label">For servers</span>
+        <strong>Consistent visual language</strong>
+        <p>Build a recognizable atmosphere for your brand, events, and player onboarding moments.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section panel reveal">
+    <div class="section-head">
+      <div>
+        <span class="kicker">Trusted by Builders</span>
+        <h2>Performance-minded beauty</h2>
+      </div>
+      <p>
+        Sulkan balances visual quality with practical controls, so you can choose a profile that fits your style and setup.
+      </p>
+    </div>
+    <div class="mini-grid">
+      <article class="mini-card">
+        <strong>Flexible quality profiles</strong>
+        <p>Pick the right rendering intensity for cinematic captures or smooth daily gameplay.</p>
+      </article>
+      <article class="mini-card">
+        <strong>Simple onboarding</strong>
+        <p>Install, launch, and start seeing immediate improvements without complex setup loops.</p>
+      </article>
+      <article class="mini-card">
+        <strong>Scene-first design</strong>
+        <p>From cave glow to ocean reflections, Sulkan emphasizes visual storytelling in every environment.</p>
+      </article>
+      <article class="mini-card">
+        <strong>Community-driven momentum</strong>
+        <p>Perfect for modpacks and creator groups that care about both quality and identity.</p>
       </article>
     </div>
   </section>
@@ -120,80 +130,19 @@
 
 <footer class="footer">
   <div class="footer-card">
-    <strong>Sulkan documentation microsite</strong>
-    <p>This static site was generated from the current Sulkan workspace.</p>
+    <strong>Sulkan visual platform</strong>
+    <p>Discover features, technical documentation, and official shader pack API guidance in one polished hub.</p>
     <div class="footer-links">
       <a href="features.html">Feature narrative</a>
-      <a href="documentation.html">Technical docs</a>
+      <a href="documentation.html">Usage guide</a>
       <a href="shaderpack-api.html">Shader Pack API</a>
-      <a href="versions.html">Version matrix</a>
+      <a href="versions.html">Downloads</a>
     </div>
     <div class="copyright">© 2026 MrAvatin CC Licence</div>
   </div>
 </footer>
-```
-
   </div>
 
   <script src="js/site.js"></script>
 
-  <!-- 🔥 REMASTER VISUAL ENGINE -->
-
-  <style>
-    .hero::before {
-      content:"";
-      position:absolute;
-      width:200%; height:200%;
-      background:radial-gradient(circle,rgba(255,0,0,0.12),transparent 60%);
-      top:-50%; left:-50%;
-      animation:pulse 8s infinite linear;
-    }
-
-    .hero-card {
-      backdrop-filter:blur(10px);
-      background:rgba(20,20,20,0.6) !important;
-      box-shadow:0 0 25px rgba(255,0,0,0.15);
-      transition:0.3s;
-    }
-
-    .hero-card:hover {
-      transform:translateY(-4px);
-      box-shadow:0 0 40px rgba(255,0,0,0.3);
-    }
-
-    .btn:hover {
-      transform:scale(1.08);
-      box-shadow:0 0 18px rgba(255,255,255,0.2);
-    }
-
-    .float-card {
-      animation:floatY 4s ease-in-out infinite;
-    }
-
-    @keyframes pulse {
-      0%{transform:scale(1);}
-      50%{transform:scale(1.2);}
-      100%{transform:scale(1);}
-    }
-
-    @keyframes floatY {
-      0%{transform:translateY(0);}
-      50%{transform:translateY(-8px);}
-      100%{transform:translateY(0);}
-    }
-  </style>
-
-  <script>
-    document.querySelectorAll('.reveal').forEach((el,i)=>{
-      el.style.opacity="0";
-      el.style.transform="translateY(20px)";
-      setTimeout(()=>{
-        el.style.transition="0.6s";
-        el.style.opacity="1";
-        el.style.transform="translateY(0)";
-      },150*i);
-    });
-  </script>
-
-</body>
 </html>

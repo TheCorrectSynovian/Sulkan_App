@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sulkan | Technical Documentation</title>
-  <meta name="description" content="Technical documentation for Sulkan runtime behavior, workflow, presets, and packaging.">
+  <title>Sulkan | Documentation and Setup Guide</title>
+  <meta name="description" content="Official Sulkan documentation covering setup, requirements, visual quality profiles, workflow tips, and creator guidance.">
   <link rel="stylesheet" href="css/site.css">
 </head>
 <body data-page="docs">
@@ -12,25 +12,28 @@
     <header class="topbar">
       <div class="topbar-inner">
         <a class="brand" href="index.html">
-<span class="brand-mark"><img src="logo.webp" alt="Sulkan icon"></span>
-          <span>Sulkan : Vulkan for Minecraft</span>
+          <span class="brand-mark"><img src="logo.webp" alt="Sulkan icon"></span>
+          <span>Sulkan | Minecraft Visual Engine</span>
         </a>
+        <button class="hamburger" id="hamburger" aria-label="Open navigation" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
         <nav class="nav">
           <a data-nav="home" href="index.html">Overview</a>
           <a data-nav="features" href="features.html">Features</a>
           <a data-nav="docs" href="documentation.html">Documentation</a>
           <a data-nav="api" href="shaderpack-api.html">Shader Pack API</a>
-          <a data-nav="versions" href="versions.html">Versions</a>
+          <a data-nav="versions" href="versions.html">Downloads</a>
         </nav>
       </div>
     </header>
 
     <main class="page">
       <section class="panel reveal">
-        <span class="eyebrow">Technical overview</span>
-        <h1>Sulkan runtime model</h1>
+        <span class="eyebrow">Setup and Usage</span>
+        <h1>Everything you need to launch Sulkan smoothly.</h1>
         <p class="lead">
-          The current Sulkan source presents a focused runtime contract. Startup initializes shader-pack management, water and shadow pipelines, and renderer state. On client start, Sulkan verifies a Vulkan backend and bootstraps the selected pack state into the active resource-pack repository.
+          This guide helps players and creators get the best Sulkan experience, from environment checks to quality tuning and visual workflow recommendations.
         </p>
       </section>
 
@@ -38,39 +41,39 @@
         <div class="section-head">
           <div>
             <span class="kicker">Requirements</span>
-            <h2>Environment and compatibility posture</h2>
+            <h2>Recommended environment</h2>
           </div>
-          <p>These items are directly visible from metadata and client startup behavior in the workspace.</p>
+          <p>Use this checklist to ensure stable setup and expected visual quality.</p>
         </div>
         <div class="table-card">
           <table>
             <thead>
               <tr>
                 <th>Area</th>
-                <th>Observed contract</th>
-                <th>Implication</th>
+                <th>Recommended baseline</th>
+                <th>Why it matters</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>Graphics backend</td>
-                <td>`Vulkan` is required and actively enforced.</td>
-                <td>Clients must restart with Vulkan available; non-Vulkan execution is treated as invalid.</td>
+                <td>Vulkan-enabled setup</td>
+                <td>Ensures Sulkan can deliver the full rendering pipeline and expected visual quality.</td>
               </tr>
               <tr>
                 <td>Runtime side</td>
-                <td>Client-only mod.</td>
-                <td>No server-side Sulkan logic is required for the documented features.</td>
+                <td>Client-side installation</td>
+                <td>Sulkan focuses on local rendering and visual output for each player.</td>
               </tr>
               <tr>
                 <td>Java target</td>
-                <td>Java 25 toolchain in this workspace.</td>
-                <td>Documentation and packaging should assume a modern runtime baseline.</td>
+                <td>Modern Java runtime</td>
+                <td>Helps maintain compatibility and performance with current releases.</td>
               </tr>
               <tr>
                 <td>Fabric metadata</td>
-                <td>Fabric loader and Fabric API are part of the current build metadata.</td>
-                <td>Sulkan is currently documented as a Fabric-side rendering stack.</td>
+                <td>Fabric loader ecosystem</td>
+                <td>Provides the expected mod platform for Sulkan installation and updates.</td>
               </tr>
             </tbody>
           </table>
@@ -81,26 +84,26 @@
         <div class="section-head">
           <div>
             <span class="kicker">Workflow</span>
-            <h2>Shader pack lifecycle</h2>
+            <h2>Typical Sulkan visual workflow</h2>
           </div>
-          <p>The manager behavior is structured enough to document as a stable user workflow.</p>
+          <p>Follow this flow to preview, refine, and lock your preferred look quickly.</p>
         </div>
         <div class="doc-grid">
           <article class="doc-card">
-            <strong>1. Discovery</strong>
-            <p>Sulkan scans the game `shaders` folder and classifies each entry as supported or unsupported. Supported entries may be directories or `.zip` files.</p>
+            <strong>1. Import</strong>
+            <p>Add your preferred packs and open Sulkan to review supported visual options.</p>
           </article>
           <article class="doc-card">
-            <strong>2. Normalization</strong>
-            <p>Packs may ship as `assets/sulkan/shaders/...` directly, or as shorthand `shaders/...`, which Sulkan maps into the Sulkan namespace during staging.</p>
+            <strong>2. Select</strong>
+            <p>Activate a style profile that matches your world tone, cinematic goals, or daily gameplay needs.</p>
           </article>
           <article class="doc-card">
-            <strong>3. Active pack staging</strong>
-            <p>Selected external packs are rebuilt into a generated active resource pack named `sulkan_shaderpack_active` before being inserted into resource-pack selection.</p>
+            <strong>3. Fine-tune</strong>
+            <p>Adjust quality level and visual intensity until your frame-time and look are both in a good place.</p>
           </article>
           <article class="doc-card">
-            <strong>4. Reload and invalidation</strong>
-            <p>When the active pack changes, Sulkan triggers resource reloads and prompts shadow renderer refresh and level render-data reset where needed.</p>
+            <strong>4. Publish</strong>
+            <p>Use your final setup for recording, streaming, screenshots, or community server presentations.</p>
           </article>
         </div>
       </section>
@@ -109,44 +112,44 @@
         <div class="section-head">
           <div>
             <span class="kicker">Quality presets</span>
-            <h2>Observed preset semantics</h2>
+            <h2>Practical quality guide</h2>
           </div>
-          <p>Preset values are explicit in the current source and are safe to document as first-order runtime controls.</p>
+          <p>Choose the quality mode that fits your hardware and visual goal.</p>
         </div>
         <div class="table-card">
           <table>
             <thead>
               <tr>
                 <th>Preset</th>
-                <th>Shadow resolution scale</th>
-                <th>Coverage scale</th>
-                <th>Max terrain cascades</th>
+                <th>Visual profile</th>
+                <th>Best use case</th>
+                <th>Expected feel</th>
               </tr>
             </thead>
             <tbody>
               <tr>
                 <td>Low</td>
-                <td>0.25x</td>
-                <td>0.68x</td>
-                <td>2</td>
+                <td>Balanced essentials</td>
+                <td>General gameplay</td>
+                <td>Cleaner visuals with lighter performance cost</td>
               </tr>
               <tr>
                 <td>Normal</td>
-                <td>0.75x</td>
-                <td>0.85x</td>
-                <td>3</td>
+                <td>Enhanced depth</td>
+                <td>Long sessions and exploration</td>
+                <td>Sharper shadows and richer atmosphere</td>
               </tr>
               <tr>
                 <td>High</td>
-                <td>1.00x</td>
-                <td>1.00x</td>
-                <td>4</td>
+                <td>Cinematic clarity</td>
+                <td>Showcase builds and events</td>
+                <td>Strong detail with polished scene definition</td>
               </tr>
               <tr>
                 <td>Ultra</td>
-                <td>1.50x</td>
-                <td>1.12x</td>
-                <td>4</td>
+                <td>Maximum presentation</td>
+                <td>Capture and production</td>
+                <td>Most dramatic visual output</td>
               </tr>
             </tbody>
           </table>
@@ -156,27 +159,27 @@
       <section class="section panel reveal">
         <div class="section-head">
           <div>
-            <span class="kicker">Water and shadows</span>
-            <h2>Technical feature summary</h2>
+            <span class="kicker">Visual pillars</span>
+            <h2>What players notice first</h2>
           </div>
-          <p>These notes summarize what Sulkan exposes without mirroring the source files directly.</p>
+          <p>These signature elements shape Sulkan's standout look.</p>
         </div>
         <div class="api-grid">
           <article class="api-card">
-            <strong>Terrain shadowing</strong>
-            <p>Up to four cascades are budgeted, refreshed at different tick intervals, and blended by receiver distance. Quality presets and render distance influence the active count and effective coverage.</p>
+            <strong>Terrain depth</strong>
+            <p>Landscape shadows create strong depth cues that make biomes and architecture feel more cinematic.</p>
           </article>
           <article class="api-card">
-            <strong>Entity shadowing</strong>
-            <p>Entity receivers use a three-cascade terrain shadow stack plus a dedicated dynamic entity shadow depth source for short-range detail.</p>
+            <strong>Character presence</strong>
+            <p>Entity shadow treatment adds grounded detail during movement, combat, and close-range scenes.</p>
           </article>
           <article class="api-card">
-            <strong>Wave timing</strong>
-            <p>Water animation is driven by a uniform buffer updated once per frame with runtime wave time, allowing deterministic animated displacement and ripple logic in water shaders.</p>
+            <strong>Water expression</strong>
+            <p>Animated waves and reflections help oceans, rivers, and coastlines become visual highlights.</p>
           </article>
           <article class="api-card">
-            <strong>Custom celestials</strong>
-            <p>Sulkan defines a custom orbital yaw for sun and moon direction, giving the shadow system an authored celestial orientation rather than vanilla-only assumptions.</p>
+            <strong>Skyline drama</strong>
+            <p>Day and night transitions feel more expressive, giving every build a stronger mood profile.</p>
           </article>
         </div>
       </section>
@@ -184,8 +187,8 @@
 
     <footer class="footer">
       <div class="footer-card">
-        <strong>Next stop: API surface</strong>
-        <p>The shader-pack page documents the file layout, bind names, uniform blocks, and supported pass expectations creators need to target.</p>
+        <strong>Need technical authoring details?</strong>
+        <p>Open the Shader Pack API page for creator-specific structure and integration guidance.</p>
         <div class="footer-links">
           <a href="shaderpack-api.html">Open Shader Pack API</a>
         </div>

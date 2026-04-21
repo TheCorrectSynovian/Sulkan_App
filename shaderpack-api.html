@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Sulkan | Shader Pack API</title>
-  <meta name="description" content="Shader pack authoring reference for Sulkan, including folder layout, bindings, uniform blocks, and pass contracts.">
+  <meta name="description" content="Technical shader pack API for Sulkan, including layout expectations, core programs, uniform names, and pipeline authoring contracts.">
   <link rel="stylesheet" href="css/site.css">
 </head>
 <body data-page="api">
@@ -12,15 +12,18 @@
     <header class="topbar">
       <div class="topbar-inner">
         <a class="brand" href="index.html">
-<span class="brand-mark"><img src="logo.webp" alt="Sulkan icon"></span>
-          <span>Sulkan : Vulkan for Minecraft</span>
+          <span class="brand-mark"><img src="logo.webp" alt="Sulkan icon"></span>
+          <span>Sulkan | Minecraft Visual Engine</span>
         </a>
+        <button class="hamburger" id="hamburger" aria-label="Open navigation" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
         <nav class="nav">
           <a data-nav="home" href="index.html">Overview</a>
           <a data-nav="features" href="features.html">Features</a>
           <a data-nav="docs" href="documentation.html">Documentation</a>
           <a data-nav="api" href="shaderpack-api.html">Shader Pack API</a>
-          <a data-nav="versions" href="versions.html">Versions</a>
+          <a data-nav="versions" href="versions.html">Downloads</a>
         </nav>
       </div>
     </header>
@@ -30,7 +33,7 @@
         <span class="eyebrow">Shader pack author reference</span>
         <h1>Sulkan Shader Pack API</h1>
         <p class="lead">
-          This page documents the Sulkan-facing pack surface inferred from the current runtime and shader assets. It is written as a creator contract: enough detail to build compatible packs, while avoiding unnecessary source exposure.
+          This is the technical contract for shader pack creators targeting Sulkan. Use it as the primary compatibility reference for layout, bindings, and rendering passes.
         </p>
       </section>
 
@@ -82,9 +85,9 @@
         <div class="section-head">
           <div>
             <span class="kicker">Core entry points</span>
-            <h2>Observed shader program set</h2>
+            <h2>Core shader program set</h2>
           </div>
-          <p>These are the canonical core programs exposed by the built-in Sulkan stack in the current workspace.</p>
+          <p>These are the expected program names used by the Sulkan rendering pipeline.</p>
         </div>
         <div class="table-card">
           <table>
@@ -198,7 +201,7 @@
             <span class="kicker">Pipeline behavior</span>
             <h2>Authoring expectations</h2>
           </div>
-          <p>Pack authors should treat these as behavior-level guarantees in the present runtime.</p>
+          <p>Treat these as runtime-level behavior guarantees when creating or adapting shader packs.</p>
         </div>
         <div class="doc-grid">
           <article class="doc-card">
@@ -226,7 +229,7 @@
             <span class="kicker">Compatibility boundary</span>
             <h2>What pack authors should not assume</h2>
           </div>
-          <p>This is the practical stability line implied by the current code.</p>
+          <p>These boundaries help avoid fragile integrations and maintain forward compatibility.</p>
         </div>
         <ul class="list">
           <li>Do not assume undocumented internal Java classes are part of the public authoring API.</li>
@@ -241,6 +244,10 @@
       <div class="footer-card">
         <strong>Sulkan creator note</strong>
         <p>The fastest path to reliable compatibility is to treat Sulkan as its own shader target with a deliberate namespace, pass set, and binding contract.</p>
+        <div class="footer-links">
+          <a href="documentation.html">Documentation</a>
+          <a href="versions.html">Downloads</a>
+        </div>
         <div class="copyright">© 2026 MrAvatin CC Licence</div>
       </div>
     </footer>

@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // Reveal animations
   const reveals = Array.from(document.querySelectorAll(".reveal"));
   const observer = new IntersectionObserver(
     (entries) => {
@@ -14,33 +13,36 @@ document.addEventListener("DOMContentLoaded", () => {
   );
   reveals.forEach((el) => observer.observe(el));
 
-  // Nav active
   const page = document.body.dataset.page;
   document.querySelectorAll("[data-nav]").forEach((link) => {
     if (link.dataset.nav === page) link.classList.add("active");
   });
 
-  // Hamburger menu
-  const hamburger = document.querySelector('.topbar-inner');
-  const nav = document.querySelector('.nav');
-  
-  if (window.innerWidth <= 760) {
-    nav.classList.add('hidden');
-    // Add hamburger HTML dynamically
-    const hamHTML = '<div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>';
-    hamburger.insertAdjacentHTML('beforeend', hamHTML);
-    
-    const hamBtn = document.getElementById('hamburger');
-    hamBtn.addEventListener('click', () => {
-      nav.classList.toggle('hidden');
-      hamBtn.classList.toggle('open');
-    });
-  }
+  const nav = document.querySelector(".nav");
+  const hamBtn = document.getElementById("hamburger");
 
-  // Close nav on resize
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 760) {
-      nav.classList.remove('hidden');
+  if (!nav || !hamBtn) return;
+
+  const syncNavState = () => {
+    const mobile = window.innerWidth <= 760;
+    if (mobile) {
+      nav.classList.add("hidden");
+      hamBtn.setAttribute("aria-expanded", "false");
+      hamBtn.classList.remove("open");
+    } else {
+      nav.classList.remove("hidden");
+      hamBtn.setAttribute("aria-expanded", "false");
+      hamBtn.classList.remove("open");
     }
+  };
+
+  hamBtn.addEventListener("click", () => {
+    const willOpen = nav.classList.contains("hidden");
+    nav.classList.toggle("hidden");
+    hamBtn.classList.toggle("open", willOpen);
+    hamBtn.setAttribute("aria-expanded", String(willOpen));
   });
+
+  window.addEventListener("resize", syncNavState);
+  syncNavState();
 });
