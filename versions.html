@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Sulkan | Versions</title>
+  <title>Sulkan | Download| Versions</title>
   <meta name="description" content="Observed Sulkan version lineage from metadata and build outputs in the current workspace.">
   <link rel="stylesheet" href="css/site.css">
 </head>
@@ -40,19 +40,32 @@
             <span class="kicker">Metadata</span>
             <h2>Primary version identifiers</h2>
           </div>
-          <p>The workspace currently exposes more than one version string, which usually means metadata and build lineage are evolving in parallel.</p>
+          
         </div>
         <div class="version-grid">
           <article class="version-card">
             <span class="label">Fabric metadata</span>
-            <strong>0.1.4-alpha</strong>
-            <p>Declared in the current `fabric.mod.json` as the public-facing mod version.</p>
+            <strong>0.1.3-alpha</strong>
+            <p>Latest Alpha Build of the Mod.</p>
           </article>
-          <article class="version-card">
-            <span class="label">Gradle property</span>
-            <strong>0.4.0_pv_alpha</strong>
-            <p>Declared in `gradle.properties` and likely reflects a newer internal packaging line than the Fabric metadata string.</p>
-          </article>
+          <a href="https://www.curseforge.com/minecraft/mc-mods/sulkan" target="_blank"
+   style="
+      display: inline-block;
+      padding: 12px 22px;
+      font-size: 16px;
+      font-weight: 600;
+      color: #ffffff;
+      background: linear-gradient(135deg, #ff7a18, #ffb347);
+      border-radius: 8px;
+      text-decoration: none;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      transition: all 0.25s ease;
+   "
+   onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 18px rgba(0,0,0,0.3)'"
+   onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 12px rgba(0,0,0,0.2)'"
+>
+   ⬇ Download Sulkan Mod
+</a>
           <article class="version-card">
             <span class="label">Target baseline</span>
             <strong>26.2-snapshot-3</strong>
