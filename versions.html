@@ -7,7 +7,7 @@
     <meta name="description" content="Download Sulkan from official channels and see release highlights, compatibility notes, and update priorities.">
     <link rel="stylesheet" href="css/site.css">
 </head>
-<body data-page="versions">
+<body data-page="downloads">
     <div class="shell">
         <header class="topbar">
             <div class="topbar-inner">
@@ -24,7 +24,9 @@
                     <a data-nav="docs" href="documentation.html">Documentation</a>
                     <a data-nav="api" href="shaderpack-api.html">Shader Pack API</a>
                     <a data-nav="showcase" href="showcase.html">Showcase</a>
-                    <a data-nav="versions" href="versions.html">Downloads</a>
+                    <a data-nav="downloads" href="versions.html">Downloads</a>
+                    <a data-nav="shaderpacks" href="spdownloads.html">Shaderpacks</a>
+                    <a data-nav="terms" href="terms.html">Terms</a>
                 </nav>
             </div>
         </header>
@@ -39,7 +41,11 @@
                 <div class="button-row">
                     <a class="btn btn-primary" href="https://www.curseforge.com/minecraft/mc-mods/sulkan" target="_blank" rel="noopener noreferrer">Download on CurseForge</a>
                     <a class="btn btn-success" href="https://modrinth.com/mod/sulkan" target="_blank" rel="noopener noreferrer">Download on Modrinth</a>
+                    <a class="btn btn-secondary" id="latest-stable-link" href="downloads/Stable/sulkan-0.1.6.jar">Direct .jar download</a>
                 </div>
+                <p class="hint" style="margin-top: 12px;">
+                    Direct downloads are hosted on this site. For update tracking, dependencies, and comments, prefer CurseForge or Modrinth.
+                </p>
             </section>
 
             <section class="section reveal">
@@ -53,7 +59,7 @@
                 <div class="version-grid">
                     <article class="version-card">
                         <span class="label">Latest Release</span>
-                        <strong>0.1.5 (26.2-snapshot-4)</strong>
+                        <strong>0.1.6 (26.2-snapshot-4)</strong>
                         <p>Massive performance jump with indirect rendering. Features dynamic lighting and fixes for terrain and water rendering issues.</p>
                     </article>
                     <article class="version-card">
@@ -66,6 +72,25 @@
                         <strong>Optimal Visuals</strong>
                         <p>For best results, set shadow and water to 'High' and turn Ambient Occlusion 'Off'.</p>
                     </article>
+                </div>
+            </section>
+
+            <section class="section panel reveal">
+                <div class="section-head">
+                    <div>
+                        <span class="kicker">Archive</span>
+                        <h2>Older releases</h2>
+                    </div>
+                    <p>Automatically listed from <code>downloads/All Releases</code>.</p>
+                </div>
+                <div class="download-field">
+                    <div class="download-field-head">
+                        <label for="all-releases-filter">Filter</label>
+                        <input id="all-releases-filter" class="input" type="search" placeholder="Type to filter (e.g. 0.1.4, alpha)" autocomplete="off">
+                    </div>
+                    <div id="all-releases-list" class="download-list" aria-live="polite">
+                      <span class="muted">Loading releases…</span>
+                    </div>
                 </div>
             </section>
 
@@ -105,6 +130,22 @@
                 <div class="footer-links">
                     <a href="shaderpack-api.html">Shader Pack API</a>
                     <a href="documentation.html">Documentation</a>
+                </div>
+                <div class="footer-extras">
+                    <div class="footer-extra">
+                        <strong>💬 Community</strong>
+                        <p class="muted">For support, feedback, or development updates:</p>
+                        <div class="footer-links" style="margin-top: 8px;">
+                            <a href="https://discord.gg/9wXEBAmDNS" target="_blank" rel="noopener noreferrer">Discord</a>
+                        </div>
+                    </div>
+                    <div class="footer-extra">
+                        <strong>☕ Support Development</strong>
+                        <p class="muted">If you’d like to support continued development:</p>
+                        <div class="footer-links" style="margin-top: 8px;">
+                            <a href="https://ko-fi.com/mravatin" target="_blank" rel="noopener noreferrer">Ko-fi</a>
+                        </div>
+                    </div>
                 </div>
                 <div class="copyright">© 2026 MrAvatin CC Licence</div>
             </div>
